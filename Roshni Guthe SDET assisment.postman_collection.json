@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "8ea0aa58-b5c8-429d-aa52-8445b69af3f7",
+		"name": "Roshni Guthe SDET assisment",
+		"description": "curl -H \"Authorization: Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6 \" [https://sdet-challenge-r](https://sdet-challenge-r)  \nho.vercel.app/api/products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43746415",
+		"_collection_link": "https://roshaniguthe111-155888.postman.co/workspace/roshaniguthe111's-Workspace~8f01604d-3725-4c80-8a2e-0e26c36f4738/collection/43746415-8ea0aa58-b5c8-429d-aa52-8445b69af3f7?action=share&source=collection_link&creator=43746415"
+	},
+	"item": [
+		{
+			"name": "https://sdet-challenge-r",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json(); // Parse the response as JSON\r",
+							"let userid = response.data[0].id; \r",
+							"pm.environment.set(\"id\", userid);\r",
+							"console.log(\"Stored productId:\", userid);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6"
+					}
+				],
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/api/products",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Generated from cURL: curl -H \"Authorization: Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6 \" https://sdet-challenge-r\nho.vercel.app/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sdet-challenge-rho.vercel.app/api/:{{productsuserId}}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/api/products/{{id}}",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://sdet-challenge-rho.vercel.app/api/products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"New Product2\",\r\n    \"price\": 49.99,\r\n    \"stock\": 100,\r\n    \"category\": \"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/api/products",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://sdet-challenge-rho.vercel.app/api/products/{{id}}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Product1\",\r\n    \"price\": 59.99,\r\n    \"stock\": 75,\r\n    \"category\": \"Updated Category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/api/products/{{id}}",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://sdet-challenge-rho.vercel.app/api/products/{{id}}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/api/products/{{id}}",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://sdet-challenge-rho.vercel.app/health",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa5ba9e673d84eaa902c71aca68cded7-7da0f8a6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sdet-challenge-rho.vercel.app/health",
+					"protocol": "https",
+					"host": [
+						"sdet-challenge-rho",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
