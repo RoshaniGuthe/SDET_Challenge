@@ -23,4 +23,4 @@ jobs:
         run: npm install -g newman  # Installs Newman CLI
 
       - name: Run Postman Collection
-        run: newman run SDET_Challenge.json
+        run: newman run Roshni Guthe SDET assisment.json
