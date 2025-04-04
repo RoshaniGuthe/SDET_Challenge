@@ -1,0 +1,26 @@
+name: Run Postman Tests
+
+on:
+  push:                # Runs when you push code to the repository
+    branches:
+      - main           # Change this if using a different branch
+  pull_request:        # Runs on pull requests to main branch
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Fetches the latest code from the repository
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'        # Use the latest LTS version
+
+      - name: Install Newman
+        run: npm install -g newman  # Installs Newman CLI
+
+      - name: Run Postman Collection
+        run: newman run SDET_Challenge.json
